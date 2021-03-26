@@ -66,25 +66,25 @@ export default class Timer extends Component {
       }
     }
 
-    const formatedTime = () => {
+    const formattedTime = () => {
       let seconds = Math.floor((time / 1000) % 60)
       let minutes = Math.floor((time / 1000) / 60)
       let hours = Math.floor(((time / 1000) / 60) / 60)
-      let formartedSeconds = ''
-      let formartedMinutes = ''
-      let formartedHours = ''
-      formartedSeconds = seconds < 10 ? `0${seconds}` : seconds
-      formartedMinutes = minutes < 10 ? `0${minutes}` : minutes
-      formartedHours = hours < 10 ? `0${hours}` : hours
+      let formattedSeconds = ''
+      let formattedMinutes = ''
+      let formattedHours = ''
+      formattedSeconds = seconds < 10 ? `0${seconds}` : seconds
+      formattedMinutes = minutes < 10 ? `0${minutes}` : minutes
+      formattedHours = hours < 10 ? `0${hours}` : hours
       
       return (
-        <div className="timer-value" data-testid="timer-value">{formartedHours}:{formartedMinutes}:{formartedSeconds}</div>
+        <div className="timer-value" data-testid="timer-value">{formattedHours}:{formattedMinutes}:{formattedSeconds}</div>
       )
     }
 
     return (
       <div className="mt-100 layout-column align-items-center justify-content-center">
-        {formatedTime()}
+        {formattedTime()}
         {timerButtons()}
         {resetButton()}
       </div>
